@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="estilo.css">
+<title>js</title>
+</head>
+<body>
+<h1>Tela de logim</h1>
+<hr>
+
+<input type="button" id="btn" value="Verificar" onclick="verificar()">
+<p id="p1"> </p>
+<script>
+function verificar(){
+let tentativas = 1;
+
+while (tentativas <=3){
+let login = prompt("Informe o seu login: ")
+if (login == null){
+break;
+}
+let senha = prompt("Informe a senha")
+if (login == null){
+break;
+}
+
+if (login == "abc" && senha =="123"){
+alert("Bem vindo ao sistema!")
+window.location.href = "pagina2.html"
+break;
+} else {
+alert("login ou senha incorretos")
+tentativas++;
+}
+}
+if (tentativas > 3){
+document.getElementById("btn").setAttribute("disabled","true");
+document.getElementById("p1").innerText ="Tentativas Excedidas!"
+document.body.style.backgroundColor = "#ff9d1d";
+}
+
+}
+</script>
+</body>
+</html>
